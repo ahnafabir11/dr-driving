@@ -1,0 +1,19 @@
+.ExprienceCard {
+  width: 300px;
+  padding: 20px;
+  margin: 10px 5px;
+  border: 1px dotted #333366;
+  border-radius: 15px;
+}
+
+.exprience-number {
+  display: inline-block;
+  color: #333366;
+  border-bottom: 2px solid #333366;
+  margin-bottom: 10px;
+}
+
+.exprience-icon {
+  font-size: 40px;
+  color: #fd4b4b
+}
