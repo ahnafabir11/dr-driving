@@ -1,0 +1,11 @@
+.nav-links-text {
+  font-size: 1.2rem;
+  padding-left: 15px;
+  color: #333366;
+  font-weight: 500;
+}
+
+.nav-links-text:hover {
+  color: #000000;
+  text-decoration: none;
+}

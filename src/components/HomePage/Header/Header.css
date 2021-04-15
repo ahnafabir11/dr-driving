@@ -1,0 +1,6 @@
+.Header {
+  background-image: linear-gradient(180deg, #ffffffd5, #dedef7d7), url('../../../images/topbar-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
