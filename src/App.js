@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Dashboard from "./components/DashboardPage/Dashboard/Dashboard";
 import Home from './components/HomePage/Home/Home';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
           <h1>This is Orders Page</h1>
         </Route>
         <Route path="/dashboard">
-          <h1>This is Dasboard Page</h1>
+          <Dashboard/>
         </Route>
         <Route path="/login">
           <h1>This is login Page</h1>

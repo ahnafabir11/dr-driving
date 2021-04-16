@@ -1,0 +1,21 @@
+.sidenav-container {
+  background-color: #505066;
+  color: white;
+  height: 100vh;
+  padding: 20px 0px;
+}
+
+.dashboard-title {
+  padding: 10px;
+  color: #333366;
+}
+
+.dashboard-item-container {
+  max-width: 800px;
+}
+
+@media (max-width: 992px) {
+  .sidenav-container {
+    height: unset;
+  }
+}
