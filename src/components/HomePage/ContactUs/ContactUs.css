@@ -1,0 +1,17 @@
+.ContactUs {
+  background-color: #fc9c9c27;
+}
+
+.custom-btn {
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: #fd4d4d;
+  color: white;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 5px;
+}
+
+.custom-btn:hover {
+  background-color: #333366;
+}
