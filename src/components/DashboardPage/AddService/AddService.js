@@ -2,10 +2,12 @@ import './AddService.css';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Card } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 
 const AddService = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [file, setFile] = useState(null);
+  const history = useHistory();
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0])
@@ -25,7 +27,7 @@ const AddService = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        history.push('/')
       })
   };
 

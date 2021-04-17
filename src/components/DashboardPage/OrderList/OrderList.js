@@ -7,6 +7,7 @@ const OrderList = () => {
   const [orders, setOrders] = useState([]);
   const [orderStatus, setOrderStatus] = useState(null);
   const [loggedInUser] = useContext(UserContext);
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     fetch(`https://morning-earth-93579.herokuapp.com/allorders`, {
@@ -15,7 +16,10 @@ const OrderList = () => {
       body: JSON.stringify({ email: loggedInUser.email }),
     })
       .then(res => res.json())
-      .then(data => setOrders(data))
+      .then(data => {
+        setOrders(data)
+        setIsLoaded(true)
+      })
   }, [loggedInUser.email])
 
   const handleStatus = (e, paymentId) => {
@@ -28,6 +32,7 @@ const OrderList = () => {
 
   useEffect(() => {
     if (orderStatus) {
+      setIsLoaded(false)
       fetch(`https://morning-earth-93579.herokuapp.com/updatestatus`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -35,10 +40,20 @@ const OrderList = () => {
       })
         .then(res => res.json())
         .then(data => {
-          setOrderStatus(null)
+          fetch(`https://morning-earth-93579.herokuapp.com/allorders`, {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: loggedInUser.email }),
+          })
+            .then(res => res.json())
+            .then(data => {
+              setOrders(data)
+              setIsLoaded(true)
+            })
+          setIsLoaded(true)
         })
     }
-  }, [orderStatus])
+  }, [loggedInUser.email, orderStatus])
 
   return (
     <div className="OrderList">
@@ -70,13 +85,30 @@ const OrderList = () => {
                       <option value="Pending">Pending</option>
                       <option value="On Going">On Going</option>
                       <option value="Done">Done</option>
+                      {
+                        !isLoaded &&
+                        <div className="d-flex justify-content-center">
+                          <div className="spinner-border text-danger" role="status">
+                            <span className="sr-only">Loading...</span>
+                          </div>
+                        </div>
+                      }
                     </select>
+                    
                   </td>
                 </tr>
               )
             }
           </tbody>
         </Table>
+        {
+          !isLoaded &&
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border text-danger" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        }
       </div>
     </div>
   )
