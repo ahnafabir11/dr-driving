@@ -24,8 +24,8 @@ const CustomerReview = () => {
         <div className="review-container pt-5">
           {
             !isLoaded &&
-            <div class="spinner-border text-danger" role="status">
-              <span class="sr-only">Loading...</span>
+            <div className="spinner-border text-danger" role="status">
+              <span className="sr-only">Loading...</span>
             </div>
           }
           {

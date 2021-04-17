@@ -3,6 +3,7 @@
   padding-left: 15px;
   color: #333366;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .nav-links-text:hover {

@@ -27,7 +27,7 @@ const NavigationBar = () => {
               { 
                 loggedInUser.email ?
                 <>
-                  <Link className="nav-links-text text-danger" onClick={handleLogout}>Logout</Link>
+                  <p className="nav-links-text text-danger" onClick={handleLogout}>Logout</p>
                 </> : 
 
                 <Link to="/login" className="nav-links-text">Login</Link>
