@@ -10,7 +10,7 @@ const ExprienceCard = ({ exprience }) => {
 
   return (
     <div data-aos="fade-up" className="ExprienceCard">
-      <img src="" alt=""/>
+      <img src={exprience.icon} alt="" style={{width: '50px', display: 'block'}} className="mx-auto mb-3"/>
       <h1 className="exprience-number">
         {exprience.number}<sup style={{ color: '#333366' }}>+</sup>
       </h1>
