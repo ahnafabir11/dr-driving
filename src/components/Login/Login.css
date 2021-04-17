@@ -1,0 +1,12 @@
+.social-login {
+  padding: 0px 2px;
+  max-width: 400px;
+  margin: 5px auto;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+}
+
+.social-login:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px #fd4d4d;
+}

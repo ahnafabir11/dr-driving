@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-const CardPayment = ({handlePaymentSuccess}) => {
+const CardPayment = ({ handlePaymentSuccess, selectedService}) => {
   const [paymentError, setPaymentError] = useState(null);
   const [paymentSuccess, setPaymentSuccess] = useState(null);
   const stripe = useStripe();
@@ -24,14 +24,16 @@ const CardPayment = ({handlePaymentSuccess}) => {
       setPaymentError(error.message);
     } else {
       setPaymentError(null);
-      handlePaymentSuccess(paymentMethod.id);
+      handlePaymentSuccess(paymentMethod.id, paymentMethod.card.brand);
       setPaymentSuccess('Congatulatioin! Your order is successfully placed')
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      
       <CardElement />
+      <p className="text-info pt-3">Your Service Charge is <b>{selectedService?.price}$</b></p>
       { paymentError && <p className="text-danger">{paymentError}</p> }
       <button 
         type="submit" 

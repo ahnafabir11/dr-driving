@@ -23,7 +23,7 @@ const ContactUs = () => {
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Your Message</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control as="textarea" rows={5} />
             </Form.Group>
             <button className="custom-btn" type="button"> Send</button>
           </Form>

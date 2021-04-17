@@ -18,7 +18,7 @@ const ReviewCard = ({review}) => {
             <Avatar alt="Remy Sharp" src={review.imgUrl} />
             <div className="ml-3">
               <h6 style={{color: '#333366'}} className="mb-0">{review.name}</h6>
-              <small style={{color: '#fd4d4d'}}>{review.date.toDateString()}</small>
+              <small style={{color: '#fd4d4d'}}>{review.date}</small>
             </div>
           </div>
           <p className="pt-3">{review.description}</p>

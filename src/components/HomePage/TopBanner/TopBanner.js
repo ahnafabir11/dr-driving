@@ -11,7 +11,7 @@ const TopBanner = () => {
             <h1 className="top-banner-title">
               Learn Driving <span style={{ color: '#fd4b4b'}}>Anytime</span>
             </h1>
-            <p className="top-banner-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam accusantium maiores doloremque, molestias possimus quisquam velit sunt hic a rem facere amet assumenda debitis pariatur quidem perspiciatis!</p>
+            <p className="top-banner-description">We offer certain services and courses that are fit every level of drivers. We have the basic course on the pro-level course. We do not prolong our course, we value your time. We try to provide affordable courses in the shortest time packed with all the necessary knowledge.</p>
           </div>
         </div>
       </div>      

@@ -26,13 +26,16 @@ const Footer = () => {
           <div className="col-lg-4 col-md-6 col-sm-12">
             <h3 style={{color: '#fd4d4d'}} className="pb-4">Quick Links</h3>
             <p className="text-white">
-              Halishahar, Chittagong, Bangladesh
+              Dashboard
             </p>
             <p className="text-white">
-              Official: dr-driving@info.com
+              My Orders
             </p>
             <p className="text-white">
-              Helpline: +8801522339901
+              Developers Panel
+            </p>
+            <p className="text-white">
+              About Us
             </p>
           </div>
           <div className="col-lg-4 col-md-12">

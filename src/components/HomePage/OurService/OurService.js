@@ -1,54 +1,20 @@
 import './OurService.css';
-import React from 'react';
-import carIcon from '../../../images/steering-wheel.png';
+import React, { useEffect, useState } from 'react';
 import ServiceCard from '../ServiceCard/ServiceCard';
 
-const serviceData = [
-  {
-    icon: carIcon,
-    title: 'Car Driving',
-    classes: 30,
-    duration: 3,
-    price: 200,
-  },
-  {
-    icon: carIcon,
-    title: 'Bike Driving',
-    classes: 30,
-    duration: 3,
-    price: 200,
-  },
-  {
-    icon: carIcon,
-    title: 'Bus Driving',
-    classes: 30,
-    duration: 3,
-    price: 200,
-  },
-  {
-    icon: carIcon,
-    title: 'Car Driving',
-    classes: 30,
-    duration: 3,
-    price: 200,
-  },
-  {
-    icon: carIcon,
-    title: 'Bike Driving',
-    classes: 30,
-    duration: 3,
-    price: 200,
-  },
-  {
-    icon: carIcon,
-    title: 'Bus Driving',
-    classes: 30,
-    duration: 3,
-    price: 200,
-  },
-]
-
 const OurService = () => {
+  const [services, setServices] = useState([])
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    fetch(`https://morning-earth-93579.herokuapp.com/services`)
+      .then(res => res.json())
+      .then(data => {
+        setServices(data)
+        setIsLoaded(true)
+      })
+  }, [services])
+
   return (
     <div className="OurService">
       <div className="container py-5">
@@ -59,7 +25,13 @@ const OurService = () => {
         <div className="pt-4">
           <div className="card-container">
             {
-              serviceData.map((service, idx) => <ServiceCard key={idx} service={service}/> )
+              !isLoaded &&
+              <div class="spinner-border text-danger" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            }
+            {
+              services.map((service, idx) => <ServiceCard key={idx} service={service} />)
             }
           </div>
         </div>
