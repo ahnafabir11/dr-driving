@@ -8,6 +8,7 @@ import OrderList from '../OrderList/OrderList';
 import AddAdmin from '../AddAdmin/AddAdmin';
 import Review from '../Review/Review';
 import PrivateRoute from '../../PrivateRoute/PrivateRoute';
+import ServiceList from '../ServiceList/ServiceList';
 
 const Dashboard = () => {
   
@@ -33,6 +34,9 @@ const Dashboard = () => {
             </PrivateRoute>
             <PrivateRoute exact path="/dashboard/orderlist">
               <OrderList />
+            </PrivateRoute>
+            <PrivateRoute exact path="/dashboard/services">
+              <ServiceList />
             </PrivateRoute>
             <PrivateRoute exact path="/dashboard/newservice">
               <AddService />

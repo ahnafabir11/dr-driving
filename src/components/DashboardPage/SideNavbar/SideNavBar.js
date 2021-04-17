@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { AiOutlineHome } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { AiOutlineAppstoreAdd } from "react-icons/ai";
+import { AiOutlineAppstore } from "react-icons/ai";
 import { RiAdminLine } from "react-icons/ri";
 import { HiOutlineChatAlt } from "react-icons/hi";
 import { FiLogOut } from "react-icons/fi";
@@ -51,6 +52,9 @@ const SideNavBar = () => {
           <div>
             <Link to="/dashboard/orderlist" className="side-nav-link">
               <BsCardChecklist /> Order List
+            </Link>
+            <Link to="/dashboard/services" className="side-nav-link">
+            <AiOutlineAppstore /> Service Lists
             </Link>
             <Link to="/dashboard/newservice" className="side-nav-link">
               <AiOutlineAppstoreAdd /> Add Service
